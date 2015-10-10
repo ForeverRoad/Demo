@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<filter>  
+    <filter-name>WeChatLogin</filter-name>  
+    <filter-class>com.zcf.servlet.WeChatLogin</filter-class>  
+	</filter>
+	
+	<filter-mapping>
+    <filter-name>WeChatLogin</filter-name>
+    <url-pattern>/WeChatLogin</url-pattern>
+	</filter-mapping>
+  <servlet>
+    <servlet-name>WeChat</servlet-name>
+    <servlet-class>com.zcf.servlet.WeChat</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MenuServlet</servlet-name>
+    <servlet-class>com.zcf.servlet.MenuServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>WeChat</servlet-name>
+    <url-pattern>/WeChat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MenuServlet</servlet-name>
+    <url-pattern>/MenuServlet</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
